@@ -209,7 +209,7 @@ export default function InitialLoadingScreen({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, scale: 0.98 }}
         transition={{ duration: 0.5 }}
-        className="fixed inset-0 z-50 flex flex-col justify-between bg-[#030712] p-6 text-slate-100 selection:bg-amber-500/30 select-none bg-tech-grid"
+        className="fixed inset-0 z-50 flex flex-col justify-between bg-[#030712] p-4 sm:p-6 text-slate-100 selection:bg-amber-500/30 select-none bg-tech-grid min-h-[100dvh] overflow-y-auto"
         role="dialog"
         aria-modal="true"
         aria-label="CPC Entrance Test Results 2026 Opening Announcement"
@@ -218,9 +218,9 @@ export default function InitialLoadingScreen({
         <div className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-500/10 blur-[120px]" />
 
         {/* Top Header: Official CPC Branding & Optional Bypass */}
-        <div className="mx-auto flex w-full max-w-5xl items-center justify-between border-b border-slate-800 pb-4">
-          <div className="flex items-center gap-3">
-            <div className="relative h-10 w-10 overflow-hidden rounded-lg border border-slate-700 bg-slate-900 p-1">
+        <div className="mx-auto flex w-full max-w-5xl items-center justify-between border-b border-slate-800 pb-3 sm:pb-4 gap-2">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="relative h-8 w-8 sm:h-10 sm:w-10 shrink-0 overflow-hidden rounded-lg border border-slate-700 bg-slate-900 p-1">
               <Image
                 src="/cpc-logo.png"
                 alt="CPC Logo"
@@ -229,17 +229,17 @@ export default function InitialLoadingScreen({
                 priority
               />
             </div>
-            <div>
-              <h1 className="font-mono text-sm font-black tracking-wider text-white sm:text-base">
+            <div className="min-w-0">
+              <h1 className="font-mono text-xs sm:text-base font-black tracking-wider text-white truncate">
                 COMPETITIVE PROGRAMMING CLUB
               </h1>
-              <p className="text-[10px] font-mono font-bold tracking-widest text-slate-400 uppercase">
+              <p className="text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-slate-400 uppercase truncate">
                 VTU BELAGAVI • RESULTS 2026
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 shrink-0">
             <span className="hidden sm:inline-flex rounded border border-amber-500/30 bg-amber-500/10 px-3 py-1 font-mono text-xs font-bold text-amber-400">
               ENTRANCE TEST 2026
             </span>
@@ -248,7 +248,7 @@ export default function InitialLoadingScreen({
             {cpcTeamBypassAvailable && (
               <button
                 onClick={handleEnterResults}
-                className="inline-flex items-center gap-1.5 rounded border border-emerald-500/40 bg-emerald-950/60 px-3 py-1 font-mono text-xs font-bold text-emerald-400 hover:bg-emerald-900 transition-all"
+                className="inline-flex items-center gap-1.5 rounded border border-emerald-500/40 bg-emerald-950/60 px-2.5 py-1 sm:px-3 sm:py-1 font-mono text-[10px] sm:text-xs font-bold text-emerald-400 hover:bg-emerald-900 transition-all shrink-0 min-h-[36px]"
                 title="CPC Team Bypass"
               >
                 <ShieldCheck className="h-3.5 w-3.5" />

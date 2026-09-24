@@ -98,7 +98,7 @@ export default function AdminAccess({
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          className="relative w-full max-w-md overflow-hidden rounded-2xl border border-sky-500/30 bg-[#090f20] p-6 shadow-2xl text-slate-100"
+          className="relative w-full max-w-md max-h-[90dvh] overflow-y-auto rounded-2xl border border-sky-500/30 bg-[#090f20] p-5 sm:p-6 shadow-2xl text-slate-100"
           role="dialog"
           aria-label="CPC Team Access Modal"
         >

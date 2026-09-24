@@ -107,12 +107,12 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function SearchBa
       </div>
 
       {/* Control Row: Status Tabs + Branch & Sort Dropdowns */}
-      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between pt-1">
+      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between pt-1 min-w-0">
         {/* Filter Tabs: ALL | SELECTED | NOT SELECTED */}
-        <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-lg border border-slate-800 shrink-0">
+        <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-lg border border-slate-800 shrink-0 overflow-x-auto max-w-full no-scrollbar">
           <button
             onClick={() => onStatusFilterChange("all")}
-            className={`px-3 py-1.5 font-mono text-xs font-bold rounded transition-all ${
+            className={`px-3 py-1.5 font-mono text-xs font-bold rounded transition-all whitespace-nowrap min-h-[36px] ${
               statusFilter === "all"
                 ? "bg-slate-800 text-white shadow-sm"
                 : "text-slate-400 hover:text-white"
@@ -122,7 +122,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function SearchBa
           </button>
           <button
             onClick={() => onStatusFilterChange("selected")}
-            className={`flex items-center gap-1.5 px-3 py-1.5 font-mono text-xs font-bold rounded transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 font-mono text-xs font-bold rounded transition-all whitespace-nowrap min-h-[36px] ${
               statusFilter === "selected"
                 ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40"
                 : "text-slate-400 hover:text-emerald-400"
@@ -133,7 +133,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function SearchBa
           </button>
           <button
             onClick={() => onStatusFilterChange("not-selected")}
-            className={`flex items-center gap-1.5 px-3 py-1.5 font-mono text-xs font-bold rounded transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 font-mono text-xs font-bold rounded transition-all whitespace-nowrap min-h-[36px] ${
               statusFilter === "not-selected"
                 ? "bg-slate-800 text-slate-200 border border-slate-700"
                 : "text-slate-400 hover:text-slate-200"

@@ -50,10 +50,10 @@ export default function Hero({ onFindMyResultClick }: HeroProps) {
             </div>
 
             {/* CTA Button */}
-            <div className="pt-2">
+            <div className="pt-2 w-full sm:w-auto">
               <button
                 onClick={onFindMyResultClick}
-                className="group inline-flex items-center gap-2.5 rounded-lg bg-orange-600 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-orange-600/20 hover:bg-orange-500 transition-all focus-ring"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-lg bg-orange-600 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-orange-600/20 hover:bg-orange-500 transition-all focus-ring min-h-[48px]"
               >
                 <Search className="h-4 w-4" />
                 <span>FIND MY RESULT</span>

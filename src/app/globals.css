@@ -13,6 +13,10 @@
     --cpc-green: #10b981;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
@@ -20,7 +24,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
   }
+}
+
+/* Hide scrollbar for clean horizontal scroll on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Subtle Technical Grid Background */

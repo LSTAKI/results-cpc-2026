@@ -61,7 +61,7 @@ export default function ResultCard({ student, onClose }: ResultCardProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 12 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className={`relative w-full max-w-lg overflow-hidden rounded-2xl border bg-slate-950 p-6 sm:p-8 shadow-2xl ${
+          className={`relative w-full max-w-lg max-h-[90dvh] overflow-y-auto rounded-2xl border bg-slate-950 p-5 sm:p-8 shadow-2xl ${
             student.selected
               ? "border-amber-500/40 shadow-amber-500/10"
               : "border-slate-800 shadow-sky-500/5"
@@ -187,10 +187,10 @@ export default function ResultCard({ student, onClose }: ResultCardProps) {
           </div>
 
           {/* Footer Action Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3">
             <button
               onClick={handleCopyLink}
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/90 py-3 px-4 font-mono text-xs font-bold text-slate-200 hover:border-slate-600 hover:bg-slate-700 hover:text-white transition-all focus:outline-none focus:ring-1 focus:ring-sky-400"
+              className="flex w-full sm:flex-1 items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/90 py-3 px-4 font-mono text-xs font-bold text-slate-200 hover:border-slate-600 hover:bg-slate-700 hover:text-white transition-all focus:outline-none focus:ring-1 focus:ring-sky-400 min-h-[44px]"
             >
               {copied ? (
                 <>
@@ -206,7 +206,7 @@ export default function ResultCard({ student, onClose }: ResultCardProps) {
             </button>
             <button
               onClick={onClose}
-              className="rounded-xl bg-amber-500 py-3 px-6 font-mono text-xs font-black text-slate-950 hover:bg-amber-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-400"
+              className="w-full sm:w-auto rounded-xl bg-amber-500 py-3 px-6 font-mono text-xs font-black text-slate-950 hover:bg-amber-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-400 min-h-[44px]"
             >
               DONE
             </button>
