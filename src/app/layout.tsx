@@ -102,7 +102,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -110,6 +110,7 @@ export default function RootLayout({
         />
       </head>
       <body
+        suppressHydrationWarning
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-[#040711] bg-grid-pattern text-slate-100 antialiased min-h-screen selection:bg-sky-500/30 selection:text-sky-200`}
       >
         {children}
