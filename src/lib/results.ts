@@ -9,7 +9,7 @@ export const allResults: StudentResult[] = rawData as StudentResult[];
  */
 export const SELECTION_CONFIG = {
   totalSeats: 25,
-  cutoffMarks: 65,
+  cutoffMarks: 66,
   totalAppeared: 109,
 };
 

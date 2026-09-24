@@ -10,7 +10,7 @@ export const siteConfig = {
   stats: {
     appeared: 109,
     selected: 25,
-    cutoffMarks: 65,
+    cutoffMarks: 66,
     year: 2026,
   },
 };

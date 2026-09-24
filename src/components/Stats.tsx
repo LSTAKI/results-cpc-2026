@@ -6,7 +6,7 @@ export default function Stats() {
   const statsList = [
     { value: "109", label: "Candidates", detail: "Appeared" },
     { value: "25", label: "Selected", detail: "Members", highlight: true },
-    { value: "65", label: "Cutoff", detail: "Marks", accent: true },
+    { value: "66", label: "Cutoff", detail: "Marks", accent: true },
     { value: "2026", label: "Test", detail: "Cycle" },
   ];
 

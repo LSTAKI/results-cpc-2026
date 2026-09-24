@@ -141,7 +141,7 @@ export default function InitialLoadingScreen({
       return {
         stageTitle: "STAGE 06 • SELECTION INTAKE",
         mainTitle: "Determining club selection...",
-        subDetail: "25 INTAKE SEATS • SELECTION CUTOFF: 65 MARKS",
+        subDetail: "25 INTAKE SEATS • SELECTION CUTOFF: 66 MARKS",
         badge: "25 SEATS",
         bpm: Math.min(120, 108 + Math.round((s - 50) * 1.2)),
         heartScale: 1.25,
@@ -149,7 +149,7 @@ export default function InitialLoadingScreen({
     } else if (s < 70) {
       const msgs = [
         "Ranking finalized.",
-        "Selection cutoff locked at 65 marks.",
+        "Selection cutoff locked at 66 marks.",
         "Top 25 candidate roster compiled.",
       ];
       const sub = msgs[Math.floor((s - 60) / 3.4) % msgs.length];

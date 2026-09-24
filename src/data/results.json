@@ -169,15 +169,15 @@
   },
   {
     "rank": 25,
-    "name": "Aditya Peeramal",
-    "branch": "CSE-A",
-    "marks": 65,
+    "name": "Nagaveni Madiwalar",
+    "branch": "ECE",
+    "marks": 66,
     "selected": true
   },
   {
     "rank": 26,
-    "name": "Nagaveni Madiwalar",
-    "branch": "ECE",
+    "name": "Aditya Peeramal",
+    "branch": "CSE-A",
     "marks": 65,
     "selected": false
   },

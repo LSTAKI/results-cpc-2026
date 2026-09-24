@@ -90,7 +90,7 @@ export default function Hero({ onFindMyResultClick }: HeroProps) {
                     SELECTED MEMBERS
                   </p>
                   <p className="text-[11px] text-slate-400">
-                    Qualifying cutoff at 65 Marks
+                    Qualifying cutoff at 66 Marks
                   </p>
                 </div>
 

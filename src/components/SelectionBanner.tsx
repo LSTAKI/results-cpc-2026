@@ -43,7 +43,7 @@ export default function SelectionBanner() {
                 SELECTION CUTOFF
               </span>
               <span className="font-mono text-xl font-extrabold text-amber-400">
-                65 MARKS
+                66 MARKS
               </span>
             </div>
 
