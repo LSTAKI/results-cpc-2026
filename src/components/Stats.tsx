@@ -1,67 +1,49 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, UserCheck, Target, Calendar } from "lucide-react";
 
 export default function Stats() {
   const statsList = [
-    {
-      value: "109",
-      label: "Students Appeared",
-      icon: Users,
-      color: "text-sky-400",
-      bg: "bg-sky-500/10 border-sky-500/20",
-    },
-    {
-      value: "25",
-      label: "Students Selected",
-      icon: UserCheck,
-      color: "text-emerald-400",
-      bg: "bg-emerald-500/10 border-emerald-500/30",
-    },
-    {
-      value: "66",
-      label: "Marks at Selection Cutoff",
-      icon: Target,
-      color: "text-amber-400",
-      bg: "bg-amber-500/10 border-amber-500/20",
-    },
-    {
-      value: "2026",
-      label: "Entrance Test",
-      icon: Calendar,
-      color: "text-indigo-400",
-      bg: "bg-indigo-500/10 border-indigo-500/20",
-    },
+    { value: "109", label: "Candidates", detail: "Appeared" },
+    { value: "25", label: "Selected", detail: "Members", highlight: true },
+    { value: "65", label: "Cutoff", detail: "Marks", accent: true },
+    { value: "2026", label: "Test", detail: "Cycle" },
   ];
 
   return (
-    <section className="mx-auto max-w-5xl px-4 py-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        {statsList.map((stat, idx) => {
-          const Icon = stat.icon;
-          return (
+    <section className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
+      <div className="rounded-xl border border-white/[0.08] bg-[#070b16] py-5 px-6 shadow-xl backdrop-blur-md">
+        <div className="grid grid-cols-2 divide-y divide-white/[0.08] sm:grid-cols-4 sm:divide-y-0 sm:divide-x">
+          {statsList.map((stat, idx) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: idx * 0.05 }}
-              className={`flex flex-col justify-between rounded-xl border p-4 backdrop-blur-sm ${stat.bg}`}
+              className="flex flex-col items-center justify-center p-3 text-center sm:px-4"
             >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-2xl font-black text-white sm:text-3xl">
-                  {stat.value}
+              <span
+                className={`font-mono text-3xl font-black sm:text-4xl tracking-tight ${
+                  stat.highlight
+                    ? "text-emerald-400"
+                    : stat.accent
+                    ? "text-orange-400"
+                    : "text-white"
+                }`}
+              >
+                {stat.value}
+              </span>
+              <div className="mt-1 flex items-center gap-1">
+                <span className="font-sans text-xs font-bold uppercase tracking-wider text-slate-200">
+                  {stat.label}
                 </span>
-                <div className={`flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900/90 shadow-inner ${stat.color}`}>
-                  <Icon className="h-4 w-4" />
-                </div>
+                <span className="text-[10px] font-mono text-slate-500 uppercase">
+                  {stat.detail}
+                </span>
               </div>
-              <p className="mt-2 text-xs font-semibold text-slate-300">
-                {stat.label}
-              </p>
             </motion.div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,12 +1,12 @@
 "use client";
 
-import { SearchX, ChevronRight, User, ArrowUp, ArrowDown, CheckCircle2, XCircle } from "lucide-react";
+import { SearchX, ChevronRight, ArrowUp, ArrowDown, CheckCircle2, XCircle } from "lucide-react";
 import { StudentResult, SortOption } from "@/types/results";
 
 interface ResultsTableProps {
   results: StudentResult[];
   searchQuery: string;
-  selectedBranch: string;
+  selectedBranch?: string;
   sortOption: SortOption;
   onSortChange: (sort: SortOption) => void;
   onSelectStudent: (student: StudentResult) => void;
@@ -16,7 +16,6 @@ interface ResultsTableProps {
 export default function ResultsTable({
   results,
   searchQuery,
-  selectedBranch,
   sortOption,
   onSortChange,
   onSelectStudent,
@@ -24,23 +23,23 @@ export default function ResultsTable({
 }: ResultsTableProps) {
   if (results.length === 0) {
     return (
-      <div className="my-8 flex flex-col items-center justify-center rounded-2xl border border-slate-800 bg-[#090e1c] p-10 text-center shadow-lg">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-800/80 text-slate-400">
-          <SearchX className="h-7 w-7" />
+      <div className="my-8 flex flex-col items-center justify-center rounded-xl border border-slate-800 bg-slate-900/40 p-10 text-center">
+        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-800 text-slate-400">
+          <SearchX className="h-6 w-6" />
         </div>
-        <h3 className="mt-4 text-base font-bold text-white">
-          No result found. Check the spelling and try again.
+        <h3 className="mt-4 text-base font-bold text-white font-mono">
+          NO MATCHING RESULTS FOUND
         </h3>
         <p className="mt-1 max-w-sm text-xs text-slate-400">
           {searchQuery
             ? `No student matching "${searchQuery}" was found.`
-            : `No student records found.`}
+            : `No candidate records found.`}
         </p>
         <button
           onClick={onResetFilters}
-          className="mt-4 rounded-xl bg-sky-600/20 border border-sky-500/30 px-4 py-2 text-xs font-semibold text-sky-300 hover:bg-sky-600/30 transition-all"
+          className="mt-4 rounded-lg bg-slate-800 border border-slate-700 px-4 py-2 font-mono text-xs font-semibold text-amber-400 hover:bg-slate-700 transition-all"
         >
-          Reset All Filters
+          RESET FILTERS
         </button>
       </div>
     );
@@ -49,15 +48,15 @@ export default function ResultsTable({
   const renderSelectionBadge = (selected: boolean) => {
     if (selected) {
       return (
-        <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-xs font-bold text-emerald-300">
-          <CheckCircle2 className="h-3 w-3 text-emerald-400" />
+        <span className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded">
+          <CheckCircle2 className="h-3 w-3" />
           SELECTED
         </span>
       );
     }
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-slate-800/80 border border-slate-700/50 px-2.5 py-0.5 text-xs font-semibold text-slate-400">
-        <XCircle className="h-3 w-3 text-slate-500" />
+      <span className="inline-flex items-center gap-1 font-mono text-[11px] font-medium text-slate-500 bg-slate-950 border border-slate-800 px-2.5 py-0.5 rounded">
+        <XCircle className="h-3 w-3 text-slate-600" />
         NOT SELECTED
       </span>
     );
@@ -70,7 +69,7 @@ export default function ResultsTable({
       <span>
         {parts.map((part, i) =>
           part.toLowerCase() === query.toLowerCase() ? (
-            <mark key={i} className="bg-sky-500/30 text-sky-200 rounded px-0.5 font-bold">
+            <mark key={i} className="bg-amber-500/25 text-amber-300 font-bold px-0.5 rounded">
               {part}
             </mark>
           ) : (
@@ -92,47 +91,47 @@ export default function ResultsTable({
   };
 
   return (
-    <div className="mt-4 overflow-hidden rounded-2xl border border-slate-800 bg-[#090e1c] shadow-xl">
+    <div className="mt-4 overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40">
       {/* Desktop Table View */}
       <div className="hidden sm:block overflow-x-auto">
         <table className="w-full text-left text-sm">
-          <thead className="border-b border-slate-800 bg-slate-900/90 text-xs uppercase tracking-wider text-slate-400">
+          <thead className="border-b border-slate-800 bg-slate-950 font-mono text-xs uppercase tracking-wider text-slate-400">
             <tr>
-              <th scope="col" className="py-3.5 px-6 font-semibold">
+              <th scope="col" className="py-4 px-6 font-bold w-24">
                 <button
                   onClick={() => handleHeaderSort("rank")}
-                  className="flex items-center gap-1 hover:text-white transition-colors"
+                  className="flex items-center gap-1 hover:text-amber-400 transition-colors"
                 >
-                  Rank
-                  {sortOption === "rank-asc" && <ArrowUp className="h-3 w-3 text-sky-400" />}
-                  {sortOption === "rank-desc" && <ArrowDown className="h-3 w-3 text-sky-400" />}
+                  RANK
+                  {sortOption === "rank-asc" && <ArrowUp className="h-3 w-3 text-amber-400" />}
+                  {sortOption === "rank-desc" && <ArrowDown className="h-3 w-3 text-amber-400" />}
                 </button>
               </th>
-              <th scope="col" className="py-3.5 px-6 font-semibold">
+              <th scope="col" className="py-4 px-6 font-bold">
                 <button
                   onClick={() => handleHeaderSort("name")}
                   className="flex items-center gap-1 hover:text-white transition-colors"
                 >
-                  Student
+                  CANDIDATE
                   {sortOption === "name-asc" && <ArrowUp className="h-3 w-3 text-sky-400" />}
                   {sortOption === "name-desc" && <ArrowDown className="h-3 w-3 text-sky-400" />}
                 </button>
               </th>
-              <th scope="col" className="py-3.5 px-6 font-semibold">
-                Branch
+              <th scope="col" className="py-4 px-6 font-bold">
+                BRANCH
               </th>
-              <th scope="col" className="py-3.5 px-6 font-semibold text-right">
+              <th scope="col" className="py-4 px-6 font-bold text-right w-28">
                 <button
                   onClick={() => handleHeaderSort("marks")}
-                  className="ml-auto flex items-center gap-1 hover:text-white transition-colors"
+                  className="ml-auto flex items-center gap-1 hover:text-sky-400 transition-colors"
                 >
-                  Marks
+                  MARKS
                   {sortOption === "marks-desc" && <ArrowDown className="h-3 w-3 text-sky-400" />}
                   {sortOption === "marks-asc" && <ArrowUp className="h-3 w-3 text-sky-400" />}
                 </button>
               </th>
-              <th scope="col" className="py-3.5 px-6 font-semibold text-center">
-                Selection
+              <th scope="col" className="py-4 px-6 font-bold text-center w-36">
+                STATUS
               </th>
             </tr>
           </thead>
@@ -149,30 +148,27 @@ export default function ResultsTable({
                 }}
                 tabIndex={0}
                 role="button"
-                aria-label={`Student ${student.name}, Rank ${student.rank}, Branch ${student.branch}, Marks ${student.marks}, Selection ${student.selected ? "Selected" : "Not Selected"}`}
+                aria-label={`Student ${student.name}, Rank #${student.rank}, Branch ${student.branch}, Marks ${student.marks}, Selection ${student.selected ? "Selected" : "Not Selected"}`}
                 className={`group cursor-pointer transition-colors focus:outline-none ${
                   student.selected
-                    ? "hover:bg-emerald-950/25 bg-emerald-950/10"
-                    : "hover:bg-slate-800/60"
+                    ? "hover:bg-slate-800/60 bg-slate-900/30"
+                    : "hover:bg-slate-800/40"
                 }`}
               >
-                <td className="py-3.5 px-6 whitespace-nowrap font-mono font-bold text-slate-200">
-                  #{student.rank}
+                <td className="py-3.5 px-6 whitespace-nowrap font-mono font-bold text-amber-400 group-hover:text-amber-300">
+                  #{String(student.rank).padStart(2, "0")}
                 </td>
-                <td className="py-3.5 px-6 whitespace-nowrap text-white group-hover:text-sky-300 transition-colors">
+                <td className="py-3.5 px-6 whitespace-nowrap text-slate-100 group-hover:text-sky-300 transition-colors font-semibold">
                   <div className="flex items-center gap-2.5">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-800 text-slate-300 group-hover:bg-sky-900/50 group-hover:text-sky-300">
-                      <User className="h-3.5 w-3.5" />
-                    </div>
                     <span>{renderHighlightedName(student.name, searchQuery)}</span>
                   </div>
                 </td>
                 <td className="py-3.5 px-6 whitespace-nowrap">
-                  <span className="inline-block rounded-md bg-slate-900 px-2.5 py-0.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-300 border border-slate-800">
+                  <span className="font-mono text-xs font-bold uppercase text-slate-300 bg-slate-950 px-2 py-0.5 rounded border border-slate-800">
                     {student.branch}
                   </span>
                 </td>
-                <td className="py-3.5 px-6 whitespace-nowrap text-right font-mono font-bold text-sky-400">
+                <td className="py-3.5 px-6 whitespace-nowrap text-right font-mono font-black text-sky-400 group-hover:scale-105 transition-transform">
                   <span className="text-base">{student.marks}</span>
                 </td>
                 <td className="py-3.5 px-6 whitespace-nowrap text-center">
@@ -184,7 +180,7 @@ export default function ResultsTable({
         </table>
       </div>
 
-      {/* Mobile Card View */}
+      {/* Mobile Card/Row View */}
       <div className="block sm:hidden divide-y divide-slate-800/80">
         {results.map((student, index) => (
           <div
@@ -198,12 +194,10 @@ export default function ResultsTable({
             }}
             tabIndex={0}
             role="button"
-            className={`flex items-center justify-between p-4 cursor-pointer focus:outline-none transition-colors ${
-              student.selected ? "bg-emerald-950/15 hover:bg-emerald-950/30" : "hover:bg-slate-800/50"
-            }`}
+            className="flex items-center justify-between p-4 cursor-pointer focus:outline-none hover:bg-slate-800/50 transition-colors"
           >
             <div className="flex items-center gap-3">
-              <span className="font-mono text-sm font-bold text-slate-300">
+              <span className="font-mono text-sm font-bold text-amber-400">
                 #{student.rank}
               </span>
               <div>
@@ -211,7 +205,7 @@ export default function ResultsTable({
                   {renderHighlightedName(student.name, searchQuery)}
                 </h4>
                 <div className="mt-1 flex items-center gap-2">
-                  <span className="inline-block rounded bg-slate-900 px-2 py-0.5 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 border border-slate-800">
+                  <span className="font-mono text-[10px] font-bold uppercase text-slate-300 bg-slate-950 px-2 py-0.5 rounded border border-slate-800">
                     {student.branch}
                   </span>
                   {renderSelectionBadge(student.selected)}
@@ -220,11 +214,11 @@ export default function ResultsTable({
             </div>
 
             <div className="flex items-center gap-2">
-              <div className="text-right">
-                <span className="text-base font-bold font-mono text-sky-400">
+              <div className="text-right font-mono">
+                <span className="text-base font-bold text-sky-400">
                   {student.marks}
                 </span>
-                <span className="text-[10px] text-slate-500 block">marks</span>
+                <span className="text-[10px] text-slate-500 block">pts</span>
               </div>
               <ChevronRight className="h-4 w-4 text-slate-500" />
             </div>
@@ -234,3 +228,4 @@ export default function ResultsTable({
     </div>
   );
 }
+

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShieldAlert, KeyRound, X, Check, Eye, Zap } from "lucide-react";
+import { ShieldAlert, KeyRound, X, Eye, Zap } from "lucide-react";
 import { StudentResult } from "@/types/results";
 
 interface AdminAccessProps {

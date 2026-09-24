@@ -44,7 +44,7 @@ export default function Home() {
       const hasSeenIntro = sessionStorage.getItem("cpc_intro_seen");
       const isReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (hasSeenIntro === "true" || isReduced) {
-        setShowInitialScreen(false);
+        setTimeout(() => setShowInitialScreen(false), 0);
       }
     }
   }, []);

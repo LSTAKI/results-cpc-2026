@@ -2,14 +2,15 @@
 
 @layer base {
   :root {
-    --background: #040711;
+    --background: #030712;
     --foreground: #f8fafc;
-    --card: #0b101f;
-    --card-hover: #11182c;
-    --card-border: rgba(255, 255, 255, 0.08);
-    --accent-cyan: #38bdf8;
-    --accent-emerald: #34d399;
-    --accent-amber: #fbbf24;
+    --surface-1: #090e1a;
+    --surface-2: #0f1629;
+    --surface-border: rgba(255, 255, 255, 0.07);
+    --cpc-orange: #f97316;
+    --cpc-amber: #fbbf24;
+    --cpc-cyan: #38bdf8;
+    --cpc-green: #10b981;
   }
 
   body {
@@ -22,33 +23,43 @@
   }
 }
 
-/* Code-portal background subtle grid */
-.bg-grid-pattern {
-  background-size: 32px 32px;
+/* Subtle Technical Grid Background */
+.bg-tech-grid {
+  background-size: 40px 40px;
   background-image: 
-    radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Subtle Radial Glow in Hero */
+.hero-glow-orange {
+  background: radial-gradient(circle at 30% 20%, rgba(249, 115, 22, 0.12) 0%, transparent 60%);
+}
+
+.hero-glow-cyan {
+  background: radial-gradient(circle at 70% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 60%);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #040711;
+  background: #030712;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #1e293b;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
 
-/* Accessible focus ring style */
+/* Accessible focus ring */
 .focus-ring {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950;
 }

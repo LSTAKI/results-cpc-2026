@@ -9,7 +9,7 @@ export const allResults: StudentResult[] = rawData as StudentResult[];
  */
 export const SELECTION_CONFIG = {
   totalSeats: 25,
-  cutoffMarks: 66,
+  cutoffMarks: 65,
   totalAppeared: 109,
 };
 
@@ -25,7 +25,7 @@ export function getTopPerformers(data: StudentResult[] = allResults): StudentRes
  * Ensures Rank 26 is NOT included.
  */
 export function getSelectedStudents(data: StudentResult[] = allResults): StudentResult[] {
-  return data.filter((item) => item.selected).sort((a, b) => a.rank - b.rank);
+  return data.filter((item) => item.selected && item.rank <= 25).sort((a, b) => a.rank - b.rank);
 }
 
 /**

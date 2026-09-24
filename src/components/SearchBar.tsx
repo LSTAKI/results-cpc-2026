@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, forwardRef } from "react";
+import { useEffect, forwardRef } from "react";
 import { Search, X, Filter, ArrowUpDown, CheckCircle2, XCircle } from "lucide-react";
 import { SortOption, StatusFilter } from "@/types/results";
 
@@ -55,93 +55,93 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function SearchBa
 
   const getResultCountText = () => {
     if (statusFilter === "selected") {
-      return `Showing ${filteredCount} selected students`;
+      return `Showing ${filteredCount} selected candidates`;
     }
     if (statusFilter === "not-selected") {
-      return `Showing ${filteredCount} not selected students`;
+      return `Showing ${filteredCount} non-selected candidates`;
     }
-    return `Showing ${filteredCount} results`;
+    return `Showing ${filteredCount} of ${totalCount} candidates`;
   };
 
   return (
-    <div id="search-section" className="flex flex-col gap-4">
-      {/* Prominent Search Header */}
+    <div id="search-section" className="space-y-4">
+      {/* Prominent Search Section Header */}
       <div>
-        <h3 className="text-lg font-bold text-white sm:text-xl">
-          Find Your Result
+        <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-amber-400">
+          RANKING DATABASE SEARCH
         </h3>
-        <p className="text-xs text-slate-400">
-          Search by student name or filter by selection status and branch.
-        </p>
+        <h2 className="text-2xl font-black text-white tracking-tight sm:text-3xl">
+          FIND YOUR RESULT
+        </h2>
       </div>
 
-      {/* Status Filter Tabs: ALL | SELECTED | NOT SELECTED */}
-      <div className="flex flex-wrap items-center gap-2">
-        <button
-          onClick={() => onStatusFilterChange("all")}
-          className={`flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-bold transition-all ${
-            statusFilter === "all"
-              ? "bg-sky-600 text-white shadow-md shadow-sky-600/20"
-              : "bg-slate-900 text-slate-400 border border-slate-800 hover:bg-slate-800 hover:text-white"
-          }`}
-        >
-          All Results ({totalCount})
-        </button>
-        <button
-          onClick={() => onStatusFilterChange("selected")}
-          className={`flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-bold transition-all ${
-            statusFilter === "selected"
-              ? "bg-emerald-600 text-white shadow-md shadow-emerald-600/20"
-              : "bg-slate-900 text-slate-400 border border-slate-800 hover:bg-slate-800 hover:text-emerald-300"
-          }`}
-        >
-          <CheckCircle2 className="h-3.5 w-3.5" />
-          Selected (25)
-        </button>
-        <button
-          onClick={() => onStatusFilterChange("not-selected")}
-          className={`flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-bold transition-all ${
-            statusFilter === "not-selected"
-              ? "bg-slate-700 text-white shadow-md shadow-slate-700/20"
-              : "bg-slate-900 text-slate-400 border border-slate-800 hover:bg-slate-800 hover:text-white"
-          }`}
-        >
-          <XCircle className="h-3.5 w-3.5" />
-          Not Selected (84)
-        </button>
+      {/* Primary Search Input Box */}
+      <div className="relative">
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+          <Search className="h-5 w-5 text-slate-400" />
+        </div>
+        <input
+          ref={ref}
+          type="text"
+          value={searchQuery}
+          onChange={(e) => onSearchChange(e.target.value)}
+          placeholder="Search by student name..."
+          className="w-full rounded-xl border border-slate-800 bg-slate-900/90 py-3.5 pl-12 pr-24 text-base text-white placeholder-slate-500 shadow-inner focus:border-sky-500/80 focus:outline-none focus:ring-2 focus:ring-sky-500/30 transition-all font-sans"
+          aria-label="Find your result by student name"
+        />
+        <div className="absolute inset-y-0 right-0 flex items-center pr-3 gap-2">
+          {searchQuery ? (
+            <button
+              onClick={() => onSearchChange("")}
+              className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
+              aria-label="Clear search"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          ) : (
+            <kbd className="hidden sm:inline-block rounded border border-slate-800 bg-slate-950 px-2 py-1 text-[10px] font-mono font-semibold text-slate-400">
+              PRESS /
+            </kbd>
+          )}
+        </div>
       </div>
 
-      {/* Search Input Row & Dropdown Controls */}
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        {/* Search Input Box */}
-        <div className="relative flex-1">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5">
-            <Search className="h-4 w-4 text-slate-400" />
-          </div>
-          <input
-            ref={ref}
-            type="text"
-            value={searchQuery}
-            onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Enter your name..."
-            className="w-full rounded-xl border border-slate-800 bg-slate-900/90 py-2.5 pl-10 pr-20 text-sm text-white placeholder-slate-500 shadow-inner focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 transition-all"
-            aria-label="Find your result by student name"
-          />
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3 gap-1.5">
-            {searchQuery ? (
-              <button
-                onClick={() => onSearchChange("")}
-                className="rounded p-1 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
-                aria-label="Clear search"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            ) : (
-              <kbd className="hidden sm:inline-block rounded border border-slate-700 bg-slate-800 px-1.5 py-0.5 text-[10px] font-mono text-slate-400">
-                /
-              </kbd>
-            )}
-          </div>
+      {/* Control Row: Status Tabs + Branch & Sort Dropdowns */}
+      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between pt-1">
+        {/* Filter Tabs: ALL | SELECTED | NOT SELECTED */}
+        <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-lg border border-slate-800 shrink-0">
+          <button
+            onClick={() => onStatusFilterChange("all")}
+            className={`px-3 py-1.5 font-mono text-xs font-bold rounded transition-all ${
+              statusFilter === "all"
+                ? "bg-slate-800 text-white shadow-sm"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            ALL ({totalCount})
+          </button>
+          <button
+            onClick={() => onStatusFilterChange("selected")}
+            className={`flex items-center gap-1.5 px-3 py-1.5 font-mono text-xs font-bold rounded transition-all ${
+              statusFilter === "selected"
+                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40"
+                : "text-slate-400 hover:text-emerald-400"
+            }`}
+          >
+            <CheckCircle2 className="h-3.5 w-3.5" />
+            SELECTED (25)
+          </button>
+          <button
+            onClick={() => onStatusFilterChange("not-selected")}
+            className={`flex items-center gap-1.5 px-3 py-1.5 font-mono text-xs font-bold rounded transition-all ${
+              statusFilter === "not-selected"
+                ? "bg-slate-800 text-slate-200 border border-slate-700"
+                : "text-slate-400 hover:text-slate-200"
+            }`}
+          >
+            <XCircle className="h-3.5 w-3.5" />
+            NOT SELECTED (84)
+          </button>
         </div>
 
         {/* Dropdowns: Branch Filter & Sort Select */}
@@ -158,12 +158,12 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function SearchBa
               id="branch-select"
               value={selectedBranch}
               onChange={(e) => onBranchChange(e.target.value)}
-              className="rounded-xl border border-slate-800 bg-slate-900/90 py-2.5 pl-9 pr-8 text-xs font-semibold text-slate-200 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+              className="rounded-lg border border-slate-800 bg-slate-900 py-2 pl-9 pr-8 font-mono text-xs font-semibold text-slate-200 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
             >
-              <option value="ALL">All Branches</option>
+              <option value="ALL">ALL BRANCHES</option>
               {availableBranches.map((b) => (
                 <option key={b} value={b}>
-                  {b}
+                  BRANCH: {b}
                 </option>
               ))}
             </select>
@@ -181,28 +181,28 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function SearchBa
               id="sort-select"
               value={sortOption}
               onChange={(e) => onSortChange(e.target.value as SortOption)}
-              className="rounded-xl border border-slate-800 bg-slate-900/90 py-2.5 pl-9 pr-8 text-xs font-semibold text-slate-200 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+              className="rounded-lg border border-slate-800 bg-slate-900 py-2 pl-9 pr-8 font-mono text-xs font-semibold text-slate-200 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
             >
-              <option value="rank-asc">Rank: Low → High</option>
-              <option value="rank-desc">Rank: High → Low</option>
-              <option value="marks-desc">Marks: High → Low</option>
-              <option value="marks-asc">Marks: Low → High</option>
-              <option value="name-asc">Name: A → Z</option>
-              <option value="name-desc">Name: Z → A</option>
+              <option value="rank-asc">SORT: RANK ↑</option>
+              <option value="rank-desc">SORT: RANK ↓</option>
+              <option value="marks-desc">SORT: MARKS ↓</option>
+              <option value="marks-asc">SORT: MARKS ↑</option>
+              <option value="name-asc">SORT: NAME A-Z</option>
+              <option value="name-desc">SORT: NAME Z-A</option>
             </select>
           </div>
         </div>
       </div>
 
-      {/* Result Count Indicator */}
+      {/* Result Count & Reset Filters */}
       <div
         aria-live="polite"
-        className="flex items-center justify-between text-xs font-mono text-slate-400"
+        className="flex items-center justify-between font-mono text-xs text-slate-400 pt-1"
       >
         <div>
-          <span className="font-bold text-sky-400">{getResultCountText()}</span>
+          <span className="font-semibold text-sky-400">{getResultCountText()}</span>
           {(searchQuery || selectedBranch !== "ALL" || statusFilter !== "all") && (
-            <span className="ml-1 text-slate-500">(filtered)</span>
+            <span className="ml-1.5 text-slate-500">(Active Filter)</span>
           )}
         </div>
 
@@ -213,9 +213,9 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function SearchBa
               onBranchChange("ALL");
               onStatusFilterChange("all");
             }}
-            className="text-[11px] font-sans font-medium text-sky-400 hover:underline"
+            className="text-[11px] font-mono text-amber-400 hover:underline"
           >
-            Reset Filters
+            CLEAR FILTERS
           </button>
         )}
       </div>
@@ -224,3 +224,4 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function SearchBa
 });
 
 export default SearchBar;
+

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { UserCheck, ChevronDown, ChevronUp, CheckCircle2 } from "lucide-react";
+import { ChevronDown, ChevronUp, CheckCircle2 } from "lucide-react";
 import { StudentResult } from "@/types/results";
 
 interface SelectedMembersProps {
@@ -21,44 +21,47 @@ export default function SelectedMembers({
     .filter((s) => s.selected && s.rank <= 25)
     .sort((a, b) => a.rank - b.rank);
 
-  const initialShowCount = 6;
+  const initialShowCount = 8;
   const displayedMembers = isExpanded
     ? strict25Selected
     : strict25Selected.slice(0, initialShowCount);
 
   return (
-    <section className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
-      <div className="rounded-2xl border border-emerald-500/30 bg-gradient-to-b from-emerald-950/20 to-slate-900/40 p-5 shadow-xl backdrop-blur-md">
+    <section className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 sm:p-8 backdrop-blur-sm">
         {/* Header & Subtitle */}
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between border-b border-slate-800/80 pb-4">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between border-b border-slate-800 pb-5">
           <div>
             <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                <UserCheck className="h-4 w-4" />
-              </div>
-              <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
-                Selected Members
-              </h2>
+              <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-emerald-400">
+                QUALIFIED ROSTER • 2026
+              </span>
             </div>
-            <p className="mt-1 text-xs text-slate-300 sm:text-sm">
-              The 25 students selected for the Competitive Programming Club.
+            <h2 className="mt-1 text-2xl font-black tracking-tight text-white sm:text-3xl">
+              Selected Members Roster
+            </h2>
+            <p className="mt-1 text-xs text-slate-400">
+              Official list of 25 students admitted to the Competitive Programming Club.
             </p>
           </div>
 
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-300 border border-emerald-500/40">
-              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
-              25 Members
+          <div className="shrink-0 pt-2 sm:pt-0">
+            <span className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 font-mono text-xs font-bold text-emerald-400">
+              <CheckCircle2 className="h-4 w-4" />
+              25 MEMBERS ADMITTED
             </span>
           </div>
         </div>
 
-        {/* Selected Members Grid */}
-        <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {displayedMembers.map((student) => (
+        {/* Selected Members Roster Rows */}
+        <div className="mt-4 divide-y divide-slate-800/80">
+          {displayedMembers.map((student, idx) => (
             <motion.div
-              key={`selected-member-${student.rank}-${student.name}`}
-              whileHover={{ y: -2 }}
+              key={`selected-roster-${student.rank}-${student.name}`}
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: idx * 0.04 }}
               onClick={() => onSelectStudent(student)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
@@ -68,48 +71,59 @@ export default function SelectedMembers({
               }}
               tabIndex={0}
               role="button"
-              aria-label={`Selected Member ${student.name}, Rank ${student.rank}, Branch ${student.branch}, Marks ${student.marks}`}
-              className="group cursor-pointer rounded-xl border border-slate-800 bg-slate-900/80 p-3.5 transition-all hover:border-emerald-500/50 hover:bg-slate-800/80 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+              aria-label={`Selected Member ${student.name}, Rank #${student.rank}, Branch ${student.branch}, Marks ${student.marks}`}
+              className="group relative flex items-center justify-between py-3.5 px-3 transition-all hover:bg-slate-800/40 rounded-lg cursor-pointer focus:outline-none focus:ring-1 focus:ring-emerald-400"
             >
-              <div className="flex items-start justify-between">
-                <span className="font-mono text-xs font-bold text-emerald-400">
-                  Rank #{student.rank}
+              {/* Hover Left Accent Indicator Line */}
+              <div className="absolute left-0 top-2 bottom-2 w-1 rounded-r bg-emerald-400 opacity-0 transition-opacity group-hover:opacity-100" />
+
+              <div className="flex items-center gap-4 min-w-0">
+                {/* Rank Number */}
+                <span className="font-mono text-sm font-black text-emerald-400 w-10 shrink-0">
+                  #{String(student.rank).padStart(2, "0")}
                 </span>
-                <span className="inline-flex items-center rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-300 border border-emerald-500/40">
-                  SELECTED
-                </span>
+
+                {/* Candidate Name */}
+                <div className="min-w-0">
+                  <h3 className="text-sm font-bold text-slate-100 truncate group-hover:text-emerald-300 transition-colors">
+                    {student.name}
+                  </h3>
+                </div>
               </div>
 
-              <div className="mt-2.5">
-                <h3 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">
-                  {student.name}
-                </h3>
-                <div className="mt-1 flex items-center justify-between">
-                  <span className="rounded bg-slate-950 px-2 py-0.5 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 border border-slate-800">
-                    {student.branch}
-                  </span>
-                  <span className="font-mono text-xs font-bold text-sky-400">
-                    {student.marks} <span className="text-[10px] font-normal text-slate-500">marks</span>
-                  </span>
-                </div>
+              <div className="flex items-center gap-4 shrink-0">
+                {/* Branch Badge */}
+                <span className="font-mono text-[11px] font-bold uppercase text-slate-400 bg-slate-950 px-2.5 py-1 rounded border border-slate-800">
+                  {student.branch}
+                </span>
+
+                {/* Marks */}
+                <span className="font-mono text-sm font-extrabold text-sky-400 w-12 text-right group-hover:scale-105 transition-transform">
+                  {student.marks} <span className="text-[10px] font-normal text-slate-500">pts</span>
+                </span>
+
+                {/* Status indicator */}
+                <span className="hidden sm:inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded">
+                  <CheckCircle2 className="h-3 w-3" /> SELECTED
+                </span>
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* Toggle Expand / Collapse Button */}
-        <div className="mt-4 text-center">
+        <div className="mt-6 pt-4 border-t border-slate-800/80 text-center">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-2 text-xs font-semibold text-slate-200 hover:bg-slate-700 hover:text-white transition-all"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/80 px-5 py-2.5 font-mono text-xs font-semibold text-slate-200 hover:border-slate-600 hover:bg-slate-700 hover:text-white transition-all focus:outline-none focus:ring-1 focus:ring-sky-400"
           >
             {isExpanded ? (
               <>
-                Show Less <ChevronUp className="h-4 w-4" />
+                SHOW TOP 8 ONLY <ChevronUp className="h-4 w-4" />
               </>
             ) : (
               <>
-                Show All 25 Selected Members <ChevronDown className="h-4 w-4" />
+                VIEW FULL ROSTER (ALL 25 MEMBERS) <ChevronDown className="h-4 w-4" />
               </>
             )}
           </button>
@@ -118,3 +132,4 @@ export default function SelectedMembers({
     </section>
   );
 }
+
