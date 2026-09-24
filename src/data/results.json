@@ -1,0 +1,765 @@
+[
+  {
+    "rank": 1,
+    "name": "Mushpha R",
+    "branch": "CSE",
+    "marks": 88,
+    "selected": true
+  },
+  {
+    "rank": 2,
+    "name": "Girish Hatti",
+    "branch": "AIDS",
+    "marks": 84,
+    "selected": true
+  },
+  {
+    "rank": 3,
+    "name": "Abhiram Kadali",
+    "branch": "CSE-A",
+    "marks": 83,
+    "selected": true
+  },
+  {
+    "rank": 4,
+    "name": "Darshan Pandre",
+    "branch": "CSE-A",
+    "marks": 83,
+    "selected": true
+  },
+  {
+    "rank": 5,
+    "name": "Kishan Patil",
+    "branch": "R&A",
+    "marks": 83,
+    "selected": true
+  },
+  {
+    "rank": 6,
+    "name": "Shweta D Bailwad",
+    "branch": "CSE-B",
+    "marks": 83,
+    "selected": true
+  },
+  {
+    "rank": 7,
+    "name": "Gourav Gavade",
+    "branch": "CSE-A",
+    "marks": 82,
+    "selected": true
+  },
+  {
+    "rank": 8,
+    "name": "Varsha B Ammanagi",
+    "branch": "CSE-B",
+    "marks": 81,
+    "selected": true
+  },
+  {
+    "rank": 9,
+    "name": "Shubhra Joshi",
+    "branch": "VLSI",
+    "marks": 79,
+    "selected": true
+  },
+  {
+    "rank": 10,
+    "name": "Subhara S Joshi",
+    "branch": "VLSI",
+    "marks": 79,
+    "selected": true
+  },
+  {
+    "rank": 11,
+    "name": "Varsha",
+    "branch": "AIDS",
+    "marks": 76,
+    "selected": true
+  },
+  {
+    "rank": 12,
+    "name": "Afiya Fatima",
+    "branch": "AIDS-A",
+    "marks": 74,
+    "selected": true
+  },
+  {
+    "rank": 13,
+    "name": "Kavita D Koli",
+    "branch": "VLSI",
+    "marks": 73,
+    "selected": true
+  },
+  {
+    "rank": 14,
+    "name": "Sanjana Kudari",
+    "branch": "CSBS-B",
+    "marks": 71,
+    "selected": true
+  },
+  {
+    "rank": 15,
+    "name": "Anjum Anwar Nadab",
+    "branch": "AIDS-A",
+    "marks": 70,
+    "selected": true
+  },
+  {
+    "rank": 16,
+    "name": "Asiya D varge",
+    "branch": "CSBS-B",
+    "marks": 70,
+    "selected": true
+  },
+  {
+    "rank": 17,
+    "name": "Muskan R N",
+    "branch": "CSE-A",
+    "marks": 70,
+    "selected": true
+  },
+  {
+    "rank": 18,
+    "name": "Sachidanand",
+    "branch": "CSE-B",
+    "marks": 70,
+    "selected": true
+  },
+  {
+    "rank": 19,
+    "name": "Shiragannavar",
+    "branch": "R&A",
+    "marks": 70,
+    "selected": true
+  },
+  {
+    "rank": 20,
+    "name": "Atharva Gunaji",
+    "branch": "CSBS-A",
+    "marks": 69,
+    "selected": true
+  },
+  {
+    "rank": 21,
+    "name": "Deepika Jangid",
+    "branch": "CSE-A",
+    "marks": 69,
+    "selected": true
+  },
+  {
+    "rank": 22,
+    "name": "Sanket Kamble",
+    "branch": "CSE-B",
+    "marks": 68,
+    "selected": true
+  },
+  {
+    "rank": 23,
+    "name": "Sarika",
+    "branch": "CSE-B",
+    "marks": 68,
+    "selected": true
+  },
+  {
+    "rank": 24,
+    "name": "Prabalya",
+    "branch": "VLSI",
+    "marks": 66,
+    "selected": true
+  },
+  {
+    "rank": 25,
+    "name": "Nagaveni Madiwalar",
+    "branch": "ECE",
+    "marks": 66,
+    "selected": true
+  },
+  {
+    "rank": 26,
+    "name": "Aditya Peeramal",
+    "branch": "CSE-A",
+    "marks": 65,
+    "selected": false
+  },
+  {
+    "rank": 27,
+    "name": "Aishwarya G. Pirappagol",
+    "branch": "CSBS-A",
+    "marks": 64,
+    "selected": false
+  },
+  {
+    "rank": 28,
+    "name": "Anupurna Jadhav",
+    "branch": "AIDS",
+    "marks": 64,
+    "selected": false
+  },
+  {
+    "rank": 29,
+    "name": "Megha Dolli",
+    "branch": "CSBS-A",
+    "marks": 63,
+    "selected": false
+  },
+  {
+    "rank": 30,
+    "name": "Anupriya M pathanshetty",
+    "branch": "ECE",
+    "marks": 62,
+    "selected": false
+  },
+  {
+    "rank": 31,
+    "name": "Diya Shetty",
+    "branch": "AIDS",
+    "marks": 62,
+    "selected": false
+  },
+  {
+    "rank": 32,
+    "name": "Laxmi M I",
+    "branch": "ECE",
+    "marks": 62,
+    "selected": false
+  },
+  {
+    "rank": 33,
+    "name": "Pragati Hegde",
+    "branch": "CSE-A",
+    "marks": 62,
+    "selected": false
+  },
+  {
+    "rank": 34,
+    "name": "Preeti R Gubachi",
+    "branch": "CSE-B",
+    "marks": 62,
+    "selected": false
+  },
+  {
+    "rank": 35,
+    "name": "Purti Belagali",
+    "branch": "VLSI",
+    "marks": 62,
+    "selected": false
+  },
+  {
+    "rank": 36,
+    "name": "Shivani R Muttangi",
+    "branch": "AIDS-B",
+    "marks": 62,
+    "selected": false
+  },
+  {
+    "rank": 37,
+    "name": "Aishwarya I Shellikeri",
+    "branch": "ECE",
+    "marks": 61,
+    "selected": false
+  },
+  {
+    "rank": 38,
+    "name": "Bhavyashree",
+    "branch": "AIDS-A",
+    "marks": 60,
+    "selected": false
+  },
+  {
+    "rank": 39,
+    "name": "Naveen Kumar",
+    "branch": "CSBS-B",
+    "marks": 60,
+    "selected": false
+  },
+  {
+    "rank": 40,
+    "name": "Sahana Herakal",
+    "branch": "AIDS-B",
+    "marks": 60,
+    "selected": false
+  },
+  {
+    "rank": 41,
+    "name": "Tameem",
+    "branch": "CSBS-B",
+    "marks": 60,
+    "selected": false
+  },
+  {
+    "rank": 42,
+    "name": "Rakshita S",
+    "branch": "AIDS-B",
+    "marks": 59,
+    "selected": false
+  },
+  {
+    "rank": 43,
+    "name": "Vaishnavi R Wali",
+    "branch": "CSE-B",
+    "marks": 59,
+    "selected": false
+  },
+  {
+    "rank": 44,
+    "name": "Vidyarani N T",
+    "branch": "R&A",
+    "marks": 59,
+    "selected": false
+  },
+  {
+    "rank": 45,
+    "name": "Anjali Jetkar",
+    "branch": "CSBS",
+    "marks": 58,
+    "selected": false
+  },
+  {
+    "rank": 46,
+    "name": "Sandesh S",
+    "branch": "CSE-B",
+    "marks": 58,
+    "selected": false
+  },
+  {
+    "rank": 47,
+    "name": "Soubhagya Nayak",
+    "branch": "CSE-A",
+    "marks": 58,
+    "selected": false
+  },
+  {
+    "rank": 48,
+    "name": "Vinanti A Patil",
+    "branch": "CSE-B",
+    "marks": 58,
+    "selected": false
+  },
+  {
+    "rank": 49,
+    "name": "Arati B G",
+    "branch": "CSE-A",
+    "marks": 57,
+    "selected": false
+  },
+  {
+    "rank": 50,
+    "name": "Hemanth B U",
+    "branch": "R&A",
+    "marks": 57,
+    "selected": false
+  },
+  {
+    "rank": 51,
+    "name": "Mh. Atif tharthari",
+    "branch": "R&A",
+    "marks": 57,
+    "selected": false
+  },
+  {
+    "rank": 52,
+    "name": "Pranjal P chawan",
+    "branch": "CSBS-B",
+    "marks": 57,
+    "selected": false
+  },
+  {
+    "rank": 53,
+    "name": "Sanmati A Talapatti",
+    "branch": "CSE-B",
+    "marks": 57,
+    "selected": false
+  },
+  {
+    "rank": 54,
+    "name": "Soumya Ganiger",
+    "branch": "AIDS",
+    "marks": 57,
+    "selected": false
+  },
+  {
+    "rank": 55,
+    "name": "mh. Rehan Naikwadi",
+    "branch": "AIDS-A",
+    "marks": 56,
+    "selected": false
+  },
+  {
+    "rank": 56,
+    "name": "Abrar Kazi",
+    "branch": "VLSI",
+    "marks": 55,
+    "selected": false
+  },
+  {
+    "rank": 57,
+    "name": "Akshata Arya",
+    "branch": "CSE",
+    "marks": 55,
+    "selected": false
+  },
+  {
+    "rank": 58,
+    "name": "Ritesh F",
+    "branch": "CSE-B",
+    "marks": 55,
+    "selected": false
+  },
+  {
+    "rank": 59,
+    "name": "Saniya.S.Makandar",
+    "branch": "ECE",
+    "marks": 55,
+    "selected": false
+  },
+  {
+    "rank": 60,
+    "name": "Ambika",
+    "branch": "AIDS",
+    "marks": 54,
+    "selected": false
+  },
+  {
+    "rank": 61,
+    "name": "Nayan Patil",
+    "branch": "CSE-A",
+    "marks": 54,
+    "selected": false
+  },
+  {
+    "rank": 62,
+    "name": "Pragati A Salunkhe",
+    "branch": "CSE-B",
+    "marks": 53,
+    "selected": false
+  },
+  {
+    "rank": 63,
+    "name": "Vidyashree S K",
+    "branch": "AIDS-B",
+    "marks": 53,
+    "selected": false
+  },
+  {
+    "rank": 64,
+    "name": "Karthik Patil",
+    "branch": "R&A",
+    "marks": 52,
+    "selected": false
+  },
+  {
+    "rank": 65,
+    "name": "Sinchana",
+    "branch": "VLSI",
+    "marks": 52,
+    "selected": false
+  },
+  {
+    "rank": 66,
+    "name": "Simar Sheikh",
+    "branch": "AIDS-B",
+    "marks": 50,
+    "selected": false
+  },
+  {
+    "rank": 67,
+    "name": "Sarvesh.D",
+    "branch": "R&A",
+    "marks": 49,
+    "selected": false
+  },
+  {
+    "rank": 68,
+    "name": "Srushti S K",
+    "branch": "CSE-A",
+    "marks": 49,
+    "selected": false
+  },
+  {
+    "rank": 69,
+    "name": "Vishwanath Navi",
+    "branch": "ECE",
+    "marks": 49,
+    "selected": false
+  },
+  {
+    "rank": 70,
+    "name": "Megha Gutthal",
+    "branch": "AIDS-A",
+    "marks": 48,
+    "selected": false
+  },
+  {
+    "rank": 71,
+    "name": "Prajwal",
+    "branch": "CSE-B",
+    "marks": 47,
+    "selected": false
+  },
+  {
+    "rank": 72,
+    "name": "Suchitra Ningasani",
+    "branch": "CSE",
+    "marks": 47,
+    "selected": false
+  },
+  {
+    "rank": 73,
+    "name": "Uma S ningaraddi",
+    "branch": "CSBS-B",
+    "marks": 47,
+    "selected": false
+  },
+  {
+    "rank": 74,
+    "name": "Yashodha",
+    "branch": "CSBS-B",
+    "marks": 47,
+    "selected": false
+  },
+  {
+    "rank": 75,
+    "name": "Amulya Maradi",
+    "branch": "CSBS-A",
+    "marks": 46,
+    "selected": false
+  },
+  {
+    "rank": 76,
+    "name": "Preeti Patil",
+    "branch": "AIDS-B",
+    "marks": 46,
+    "selected": false
+  },
+  {
+    "rank": 77,
+    "name": "Vishal Rathod",
+    "branch": "CSBS-B",
+    "marks": 46,
+    "selected": false
+  },
+  {
+    "rank": 78,
+    "name": "Elizabeth Rani",
+    "branch": "CSBS-A",
+    "marks": 45,
+    "selected": false
+  },
+  {
+    "rank": 79,
+    "name": "Shahzah Naaz",
+    "branch": "R&A",
+    "marks": 45,
+    "selected": false
+  },
+  {
+    "rank": 80,
+    "name": "Aditi Gunjikar",
+    "branch": "AIDS",
+    "marks": 44,
+    "selected": false
+  },
+  {
+    "rank": 81,
+    "name": "Sohan Chavan",
+    "branch": "CSE-B",
+    "marks": 43,
+    "selected": false
+  },
+  {
+    "rank": 82,
+    "name": "Achalkumar B",
+    "branch": "ECE",
+    "marks": 42,
+    "selected": false
+  },
+  {
+    "rank": 83,
+    "name": "Manasi Rajendra Giri",
+    "branch": "CSE-A",
+    "marks": 42,
+    "selected": false
+  },
+  {
+    "rank": 84,
+    "name": "Omkar Shinde",
+    "branch": "CSE-A",
+    "marks": 42,
+    "selected": false
+  },
+  {
+    "rank": 85,
+    "name": "Reshma P Rathod",
+    "branch": "CSE",
+    "marks": 42,
+    "selected": false
+  },
+  {
+    "rank": 86,
+    "name": "Sanket Bhosale",
+    "branch": "AIDS-B",
+    "marks": 42,
+    "selected": false
+  },
+  {
+    "rank": 87,
+    "name": "Sharadha Dayanand",
+    "branch": "CSE-B",
+    "marks": 42,
+    "selected": false
+  },
+  {
+    "rank": 88,
+    "name": "Shobha S Chalawadi",
+    "branch": "VLSI",
+    "marks": 41,
+    "selected": false
+  },
+  {
+    "rank": 89,
+    "name": "Bhavaneshwari C",
+    "branch": "CSBS-A",
+    "marks": 40,
+    "selected": false
+  },
+  {
+    "rank": 90,
+    "name": "Prema N Nagaral",
+    "branch": "AIDS-B",
+    "marks": 40,
+    "selected": false
+  },
+  {
+    "rank": 91,
+    "name": "Rakshita M Mathapati",
+    "branch": "CSE-B",
+    "marks": 40,
+    "selected": false
+  },
+  {
+    "rank": 92,
+    "name": "Sakshi Rajesh Kalkhambkar",
+    "branch": "AIDS-B",
+    "marks": 40,
+    "selected": false
+  },
+  {
+    "rank": 93,
+    "name": "Sahana S Iraddi",
+    "branch": "AIDS-B",
+    "marks": 39,
+    "selected": false
+  },
+  {
+    "rank": 94,
+    "name": "Manasa C B",
+    "branch": "ECE",
+    "marks": 38,
+    "selected": false
+  },
+  {
+    "rank": 95,
+    "name": "Preeti Rathod",
+    "branch": "CSBS-B",
+    "marks": 38,
+    "selected": false
+  },
+  {
+    "rank": 96,
+    "name": "Trisha H",
+    "branch": "CSBS-B",
+    "marks": 38,
+    "selected": false
+  },
+  {
+    "rank": 97,
+    "name": "Amita V Rathod",
+    "branch": "ECE",
+    "marks": 36,
+    "selected": false
+  },
+  {
+    "rank": 98,
+    "name": "Pradnaya Patil",
+    "branch": "AIDS",
+    "marks": 36,
+    "selected": false
+  },
+  {
+    "rank": 99,
+    "name": "Mh. Yaseer",
+    "branch": "R&A",
+    "marks": 34,
+    "selected": false
+  },
+  {
+    "rank": 100,
+    "name": "Sarweshwar A Jadhav",
+    "branch": "R&A",
+    "marks": 33,
+    "selected": false
+  },
+  {
+    "rank": 101,
+    "name": "Sakshi Halingali",
+    "branch": "ECE",
+    "marks": 32,
+    "selected": false
+  },
+  {
+    "rank": 102,
+    "name": "Shrikant Choudhari",
+    "branch": "ECE",
+    "marks": 32,
+    "selected": false
+  },
+  {
+    "rank": 103,
+    "name": "Amruta Patil",
+    "branch": "CSE-A",
+    "marks": 30,
+    "selected": false
+  },
+  {
+    "rank": 104,
+    "name": "Sakshi Kumbar",
+    "branch": "VLSI",
+    "marks": 29,
+    "selected": false
+  },
+  {
+    "rank": 105,
+    "name": "Nida Patel",
+    "branch": "CSE-A",
+    "marks": 28,
+    "selected": false
+  },
+  {
+    "rank": 106,
+    "name": "Girija Appasaheb PAtil",
+    "branch": "R&A",
+    "marks": 27,
+    "selected": false
+  },
+  {
+    "rank": 107,
+    "name": "Nidha",
+    "branch": "CSE-A",
+    "marks": 27,
+    "selected": false
+  },
+  {
+    "rank": 108,
+    "name": "Samrudhi Kumbar",
+    "branch": "VLSI",
+    "marks": 22,
+    "selected": false
+  },
+  {
+    "rank": 109,
+    "name": "Shreya Karanan",
+    "branch": "VLSI",
+    "marks": 20,
+    "selected": false
+  }
+]
