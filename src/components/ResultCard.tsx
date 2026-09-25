@@ -35,7 +35,7 @@ export default function ResultCard({ student, onClose }: ResultCardProps) {
   if (!student) return null;
 
   const handleCopyLink = () => {
-    const text = `CPC ENTRANCE TEST 2026 RESULT CERTIFICATE\nCandidate: ${student.name}\nBranch: ${student.branch}\nRank: #${student.rank}\nMarks: ${student.marks}/100\nStatus: ${student.selected ? "SELECTED (Top 25 Roster)" : "NOT SELECTED"}\nSelection Cutoff: 66 Marks`;
+    const text = `CPC ENTRANCE TEST 2026 RESULT CERTIFICATE\nCandidate: ${student.name}\nBranch: ${student.branch}\nRank: #${student.rank}\nMarks: ${student.marks}/100\nStatus: ${student.selected ? "SELECTED (Top 25 Roster)" : "NOT SELECTED"}\nSelection Cutoff: 65 Marks`;
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -170,7 +170,7 @@ export default function ResultCard({ student, onClose }: ResultCardProps) {
                   Qualified for CPC Roster 2026
                 </p>
                 <p className="text-[11px] text-slate-400 font-medium">
-                  Cutoff benchmark of 66 marks achieved. Welcome to the Competitive Programming Club!
+                  Cutoff benchmark of 65 marks achieved. Welcome to the Competitive Programming Club!
                 </p>
               </div>
             ) : (

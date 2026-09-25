@@ -119,8 +119,8 @@ export default function InitialLoadingScreen({
       return {
         stageTitle: "STAGE 02 • DATA LOADING",
         mainTitle: "Loading candidate scorecards...",
-        subDetail: "109 CANDIDATE RECORDS LOADED",
-        badge: "109 RECORDS",
+        subDetail: "108 CANDIDATE RECORDS LOADED",
+        badge: "108 RECORDS",
         bpm: Math.min(72, 60 + Math.round((s - 10) * 1.2)),
         heartScale: 1.05,
       };
@@ -143,7 +143,7 @@ export default function InitialLoadingScreen({
       return {
         stageTitle: "STAGE 04 • RANKING CALCULATION",
         mainTitle: "Calculating competition rankings...",
-        subDetail: "Ordering score hierarchy from Rank #01 to #109...",
+        subDetail: "Ordering score hierarchy from Rank #01 to #108...",
         badge: "RANKING IN PROGRESS",
         bpm: Math.min(96, 84 + Math.round((s - 30) * 1.2)),
         heartScale: 1.15,
@@ -152,7 +152,7 @@ export default function InitialLoadingScreen({
       return {
         stageTitle: "STAGE 05 • VERIFICATION",
         mainTitle: "Verifying official scores...",
-        subDetail: "109 CANDIDATES VERIFIED ACCORDING TO CPC STANDARDS",
+        subDetail: "108 CANDIDATES VERIFIED ACCORDING TO CPC STANDARDS",
         badge: "VERIFIED",
         bpm: Math.min(108, 96 + Math.round((s - 40) * 1.2)),
         heartScale: 1.2,
@@ -161,7 +161,7 @@ export default function InitialLoadingScreen({
       return {
         stageTitle: "STAGE 06 • SELECTION INTAKE",
         mainTitle: "Determining club selection...",
-        subDetail: "25 INTAKE SEATS • SELECTION CUTOFF: 66 MARKS",
+        subDetail: "25 INTAKE SEATS • SELECTION CUTOFF: 65 MARKS",
         badge: "25 SEATS",
         bpm: Math.min(120, 108 + Math.round((s - 50) * 1.2)),
         heartScale: 1.25,
@@ -169,7 +169,7 @@ export default function InitialLoadingScreen({
     } else if (s < 70) {
       const msgs = [
         "Ranking finalized.",
-        "Selection cutoff locked at 66 marks.",
+        "Selection cutoff locked at 65 marks.",
         "Top 25 candidate roster compiled.",
       ];
       const sub = msgs[Math.floor((s - 60) / 3.4) % msgs.length];

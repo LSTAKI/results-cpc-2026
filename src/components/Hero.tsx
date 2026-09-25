@@ -94,11 +94,11 @@ export default function Hero({ onFindMyResultClick }: HeroProps) {
                   </p>
                 </div>
 
-                {/* 109 Candidates Showcase */}
+                {/* 108 Candidates Showcase */}
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="font-mono text-3xl font-bold text-slate-200 block">
-                      109
+                      108
                     </span>
                     <span className="font-sans text-xs font-semibold text-slate-400 uppercase tracking-wider">
                       Candidates Evaluated

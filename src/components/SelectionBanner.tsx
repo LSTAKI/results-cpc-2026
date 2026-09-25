@@ -5,7 +5,7 @@ import { Sparkles } from "lucide-react";
 
 export default function SelectionBanner() {
   const selectedCount = 25;
-  const totalCount = 109;
+  const totalCount = 108;
   const percentage = Math.round((selectedCount / totalCount) * 100);
 
   return (
@@ -28,7 +28,7 @@ export default function SelectionBanner() {
                 25 <span className="text-amber-400">SELECTED</span>
               </span>
               <span className="text-slate-400 text-sm font-semibold uppercase tracking-wider">
-                out of <strong className="text-slate-200">109</strong> Candidates
+                out of <strong className="text-slate-200">108</strong> Candidates
               </span>
             </div>
 
@@ -43,7 +43,7 @@ export default function SelectionBanner() {
                 SELECTION CUTOFF
               </span>
               <span className="font-mono text-xl font-extrabold text-amber-400">
-                66 MARKS
+                65 MARKS
               </span>
             </div>
 
@@ -57,7 +57,7 @@ export default function SelectionBanner() {
         <div className="mt-6 pt-4 border-t border-slate-800/80">
           <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-1.5">
             <span>Roster Allocation</span>
-            <span>25 / 109 Candidates (23%)</span>
+            <span>25 / 108 Candidates (23%)</span>
           </div>
           <div className="h-1 w-full rounded-full bg-slate-950 overflow-hidden">
             <motion.div

@@ -8,9 +8,9 @@ export const siteConfig = {
     "Official CPC Entrance Test 2026 results portal of the Competitive Programming Club, Visvesvaraya Technological University, Belagavi.",
   url: "https://cpc-results-2026.vtu.ac.in",
   stats: {
-    appeared: 109,
+    appeared: 108,
     selected: 25,
-    cutoffMarks: 66,
+    cutoffMarks: 65,
     year: 2026,
   },
 };

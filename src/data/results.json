@@ -64,699 +64,692 @@
   },
   {
     "rank": 10,
-    "name": "Subhara S Joshi",
-    "branch": "VLSI",
-    "marks": 79,
-    "selected": true
-  },
-  {
-    "rank": 11,
     "name": "Varsha",
     "branch": "AIDS",
     "marks": 76,
     "selected": true
   },
   {
-    "rank": 12,
+    "rank": 11,
     "name": "Afiya Fatima",
     "branch": "AIDS-A",
     "marks": 74,
     "selected": true
   },
   {
-    "rank": 13,
+    "rank": 12,
     "name": "Kavita D Koli",
     "branch": "VLSI",
     "marks": 73,
     "selected": true
   },
   {
-    "rank": 14,
+    "rank": 13,
     "name": "Sanjana Kudari",
     "branch": "CSBS-B",
     "marks": 71,
     "selected": true
   },
   {
-    "rank": 15,
+    "rank": 14,
     "name": "Anjum Anwar Nadab",
     "branch": "AIDS-A",
     "marks": 70,
     "selected": true
   },
   {
-    "rank": 16,
+    "rank": 15,
     "name": "Asiya D varge",
     "branch": "CSBS-B",
     "marks": 70,
     "selected": true
   },
   {
-    "rank": 17,
+    "rank": 16,
     "name": "Muskan R N",
     "branch": "CSE-A",
     "marks": 70,
     "selected": true
   },
   {
-    "rank": 18,
+    "rank": 17,
     "name": "Sachidanand",
     "branch": "CSE-B",
     "marks": 70,
     "selected": true
   },
   {
-    "rank": 19,
+    "rank": 18,
     "name": "Shiragannavar",
     "branch": "R&A",
     "marks": 70,
     "selected": true
   },
   {
-    "rank": 20,
+    "rank": 19,
     "name": "Atharva Gunaji",
     "branch": "CSBS-A",
     "marks": 69,
     "selected": true
   },
   {
-    "rank": 21,
+    "rank": 20,
     "name": "Deepika Jangid",
     "branch": "CSE-A",
     "marks": 69,
     "selected": true
   },
   {
-    "rank": 22,
+    "rank": 21,
     "name": "Sanket Kamble",
     "branch": "CSE-B",
     "marks": 68,
     "selected": true
   },
   {
-    "rank": 23,
+    "rank": 22,
     "name": "Sarika",
     "branch": "CSE-B",
     "marks": 68,
     "selected": true
   },
   {
-    "rank": 24,
+    "rank": 23,
     "name": "Prabalya",
     "branch": "VLSI",
     "marks": 66,
     "selected": true
   },
   {
-    "rank": 25,
+    "rank": 24,
     "name": "Nagaveni Madiwalar",
     "branch": "ECE",
     "marks": 66,
     "selected": true
   },
   {
-    "rank": 26,
+    "rank": 25,
     "name": "Aditya Peeramal",
     "branch": "CSE-A",
     "marks": 65,
-    "selected": false
+    "selected": true
   },
   {
-    "rank": 27,
+    "rank": 26,
     "name": "Aishwarya G. Pirappagol",
     "branch": "CSBS-A",
     "marks": 64,
     "selected": false
   },
   {
-    "rank": 28,
+    "rank": 27,
     "name": "Anupurna Jadhav",
     "branch": "AIDS",
     "marks": 64,
     "selected": false
   },
   {
-    "rank": 29,
+    "rank": 28,
     "name": "Megha Dolli",
     "branch": "CSBS-A",
     "marks": 63,
     "selected": false
   },
   {
-    "rank": 30,
+    "rank": 29,
     "name": "Anupriya M pathanshetty",
     "branch": "ECE",
     "marks": 62,
     "selected": false
   },
   {
-    "rank": 31,
+    "rank": 30,
     "name": "Diya Shetty",
     "branch": "AIDS",
     "marks": 62,
     "selected": false
   },
   {
-    "rank": 32,
+    "rank": 31,
     "name": "Laxmi M I",
     "branch": "ECE",
     "marks": 62,
     "selected": false
   },
   {
-    "rank": 33,
+    "rank": 32,
     "name": "Pragati Hegde",
     "branch": "CSE-A",
     "marks": 62,
     "selected": false
   },
   {
-    "rank": 34,
+    "rank": 33,
     "name": "Preeti R Gubachi",
     "branch": "CSE-B",
     "marks": 62,
     "selected": false
   },
   {
-    "rank": 35,
+    "rank": 34,
     "name": "Purti Belagali",
     "branch": "VLSI",
     "marks": 62,
     "selected": false
   },
   {
-    "rank": 36,
+    "rank": 35,
     "name": "Shivani R Muttangi",
     "branch": "AIDS-B",
     "marks": 62,
     "selected": false
   },
   {
-    "rank": 37,
+    "rank": 36,
     "name": "Aishwarya I Shellikeri",
     "branch": "ECE",
     "marks": 61,
     "selected": false
   },
   {
-    "rank": 38,
+    "rank": 37,
     "name": "Bhavyashree",
     "branch": "AIDS-A",
     "marks": 60,
     "selected": false
   },
   {
-    "rank": 39,
+    "rank": 38,
     "name": "Naveen Kumar",
     "branch": "CSBS-B",
     "marks": 60,
     "selected": false
   },
   {
-    "rank": 40,
+    "rank": 39,
     "name": "Sahana Herakal",
     "branch": "AIDS-B",
     "marks": 60,
     "selected": false
   },
   {
-    "rank": 41,
+    "rank": 40,
     "name": "Tameem",
     "branch": "CSBS-B",
     "marks": 60,
     "selected": false
   },
   {
-    "rank": 42,
+    "rank": 41,
     "name": "Rakshita S",
     "branch": "AIDS-B",
     "marks": 59,
     "selected": false
   },
   {
-    "rank": 43,
+    "rank": 42,
     "name": "Vaishnavi R Wali",
     "branch": "CSE-B",
     "marks": 59,
     "selected": false
   },
   {
-    "rank": 44,
+    "rank": 43,
     "name": "Vidyarani N T",
     "branch": "R&A",
     "marks": 59,
     "selected": false
   },
   {
-    "rank": 45,
+    "rank": 44,
     "name": "Anjali Jetkar",
     "branch": "CSBS",
     "marks": 58,
     "selected": false
   },
   {
-    "rank": 46,
+    "rank": 45,
     "name": "Sandesh S",
     "branch": "CSE-B",
     "marks": 58,
     "selected": false
   },
   {
-    "rank": 47,
+    "rank": 46,
     "name": "Soubhagya Nayak",
     "branch": "CSE-A",
     "marks": 58,
     "selected": false
   },
   {
-    "rank": 48,
+    "rank": 47,
     "name": "Vinanti A Patil",
     "branch": "CSE-B",
     "marks": 58,
     "selected": false
   },
   {
-    "rank": 49,
+    "rank": 48,
     "name": "Arati B G",
     "branch": "CSE-A",
     "marks": 57,
     "selected": false
   },
   {
-    "rank": 50,
+    "rank": 49,
     "name": "Hemanth B U",
     "branch": "R&A",
     "marks": 57,
     "selected": false
   },
   {
-    "rank": 51,
+    "rank": 50,
     "name": "Mh. Atif tharthari",
     "branch": "R&A",
     "marks": 57,
     "selected": false
   },
   {
-    "rank": 52,
+    "rank": 51,
     "name": "Pranjal P chawan",
     "branch": "CSBS-B",
     "marks": 57,
     "selected": false
   },
   {
-    "rank": 53,
+    "rank": 52,
     "name": "Sanmati A Talapatti",
     "branch": "CSE-B",
     "marks": 57,
     "selected": false
   },
   {
-    "rank": 54,
+    "rank": 53,
     "name": "Soumya Ganiger",
     "branch": "AIDS",
     "marks": 57,
     "selected": false
   },
   {
-    "rank": 55,
+    "rank": 54,
     "name": "mh. Rehan Naikwadi",
     "branch": "AIDS-A",
     "marks": 56,
     "selected": false
   },
   {
-    "rank": 56,
+    "rank": 55,
     "name": "Abrar Kazi",
     "branch": "VLSI",
     "marks": 55,
     "selected": false
   },
   {
-    "rank": 57,
+    "rank": 56,
     "name": "Akshata Arya",
     "branch": "CSE",
     "marks": 55,
     "selected": false
   },
   {
-    "rank": 58,
+    "rank": 57,
     "name": "Ritesh F",
     "branch": "CSE-B",
     "marks": 55,
     "selected": false
   },
   {
-    "rank": 59,
+    "rank": 58,
     "name": "Saniya.S.Makandar",
     "branch": "ECE",
     "marks": 55,
     "selected": false
   },
   {
-    "rank": 60,
+    "rank": 59,
     "name": "Ambika",
     "branch": "AIDS",
     "marks": 54,
     "selected": false
   },
   {
-    "rank": 61,
+    "rank": 60,
     "name": "Nayan Patil",
     "branch": "CSE-A",
     "marks": 54,
     "selected": false
   },
   {
-    "rank": 62,
+    "rank": 61,
     "name": "Pragati A Salunkhe",
     "branch": "CSE-B",
     "marks": 53,
     "selected": false
   },
   {
-    "rank": 63,
+    "rank": 62,
     "name": "Vidyashree S K",
     "branch": "AIDS-B",
     "marks": 53,
     "selected": false
   },
   {
-    "rank": 64,
+    "rank": 63,
     "name": "Karthik Patil",
     "branch": "R&A",
     "marks": 52,
     "selected": false
   },
   {
-    "rank": 65,
+    "rank": 64,
     "name": "Sinchana",
     "branch": "VLSI",
     "marks": 52,
     "selected": false
   },
   {
-    "rank": 66,
+    "rank": 65,
     "name": "Simar Sheikh",
     "branch": "AIDS-B",
     "marks": 50,
     "selected": false
   },
   {
-    "rank": 67,
+    "rank": 66,
     "name": "Sarvesh.D",
     "branch": "R&A",
     "marks": 49,
     "selected": false
   },
   {
-    "rank": 68,
+    "rank": 67,
     "name": "Srushti S K",
     "branch": "CSE-A",
     "marks": 49,
     "selected": false
   },
   {
-    "rank": 69,
+    "rank": 68,
     "name": "Vishwanath Navi",
     "branch": "ECE",
     "marks": 49,
     "selected": false
   },
   {
-    "rank": 70,
+    "rank": 69,
     "name": "Megha Gutthal",
     "branch": "AIDS-A",
     "marks": 48,
     "selected": false
   },
   {
-    "rank": 71,
+    "rank": 70,
     "name": "Prajwal",
     "branch": "CSE-B",
     "marks": 47,
     "selected": false
   },
   {
-    "rank": 72,
+    "rank": 71,
     "name": "Suchitra Ningasani",
     "branch": "CSE",
     "marks": 47,
     "selected": false
   },
   {
-    "rank": 73,
+    "rank": 72,
     "name": "Uma S ningaraddi",
     "branch": "CSBS-B",
     "marks": 47,
     "selected": false
   },
   {
-    "rank": 74,
+    "rank": 73,
     "name": "Yashodha",
     "branch": "CSBS-B",
     "marks": 47,
     "selected": false
   },
   {
-    "rank": 75,
+    "rank": 74,
     "name": "Amulya Maradi",
     "branch": "CSBS-A",
     "marks": 46,
     "selected": false
   },
   {
-    "rank": 76,
+    "rank": 75,
     "name": "Preeti Patil",
     "branch": "AIDS-B",
     "marks": 46,
     "selected": false
   },
   {
-    "rank": 77,
+    "rank": 76,
     "name": "Vishal Rathod",
     "branch": "CSBS-B",
     "marks": 46,
     "selected": false
   },
   {
-    "rank": 78,
+    "rank": 77,
     "name": "Elizabeth Rani",
     "branch": "CSBS-A",
     "marks": 45,
     "selected": false
   },
   {
-    "rank": 79,
+    "rank": 78,
     "name": "Shahzah Naaz",
     "branch": "R&A",
     "marks": 45,
     "selected": false
   },
   {
-    "rank": 80,
+    "rank": 79,
     "name": "Aditi Gunjikar",
     "branch": "AIDS",
     "marks": 44,
     "selected": false
   },
   {
-    "rank": 81,
+    "rank": 80,
     "name": "Sohan Chavan",
     "branch": "CSE-B",
     "marks": 43,
     "selected": false
   },
   {
-    "rank": 82,
+    "rank": 81,
     "name": "Achalkumar B",
     "branch": "ECE",
     "marks": 42,
     "selected": false
   },
   {
-    "rank": 83,
+    "rank": 82,
     "name": "Manasi Rajendra Giri",
     "branch": "CSE-A",
     "marks": 42,
     "selected": false
   },
   {
-    "rank": 84,
+    "rank": 83,
     "name": "Omkar Shinde",
     "branch": "CSE-A",
     "marks": 42,
     "selected": false
   },
   {
-    "rank": 85,
+    "rank": 84,
     "name": "Reshma P Rathod",
     "branch": "CSE",
     "marks": 42,
     "selected": false
   },
   {
-    "rank": 86,
+    "rank": 85,
     "name": "Sanket Bhosale",
     "branch": "AIDS-B",
     "marks": 42,
     "selected": false
   },
   {
-    "rank": 87,
+    "rank": 86,
     "name": "Sharadha Dayanand",
     "branch": "CSE-B",
     "marks": 42,
     "selected": false
   },
   {
-    "rank": 88,
+    "rank": 87,
     "name": "Shobha S Chalawadi",
     "branch": "VLSI",
     "marks": 41,
     "selected": false
   },
   {
-    "rank": 89,
+    "rank": 88,
     "name": "Bhavaneshwari C",
     "branch": "CSBS-A",
     "marks": 40,
     "selected": false
   },
   {
-    "rank": 90,
+    "rank": 89,
     "name": "Prema N Nagaral",
     "branch": "AIDS-B",
     "marks": 40,
     "selected": false
   },
   {
-    "rank": 91,
+    "rank": 90,
     "name": "Rakshita M Mathapati",
     "branch": "CSE-B",
     "marks": 40,
     "selected": false
   },
   {
-    "rank": 92,
+    "rank": 91,
     "name": "Sakshi Rajesh Kalkhambkar",
     "branch": "AIDS-B",
     "marks": 40,
     "selected": false
   },
   {
-    "rank": 93,
+    "rank": 92,
     "name": "Sahana S Iraddi",
     "branch": "AIDS-B",
     "marks": 39,
     "selected": false
   },
   {
-    "rank": 94,
+    "rank": 93,
     "name": "Manasa C B",
     "branch": "ECE",
     "marks": 38,
     "selected": false
   },
   {
-    "rank": 95,
+    "rank": 94,
     "name": "Preeti Rathod",
     "branch": "CSBS-B",
     "marks": 38,
     "selected": false
   },
   {
-    "rank": 96,
+    "rank": 95,
     "name": "Trisha H",
     "branch": "CSBS-B",
     "marks": 38,
     "selected": false
   },
   {
-    "rank": 97,
+    "rank": 96,
     "name": "Amita V Rathod",
     "branch": "ECE",
     "marks": 36,
     "selected": false
   },
   {
-    "rank": 98,
+    "rank": 97,
     "name": "Pradnaya Patil",
     "branch": "AIDS",
     "marks": 36,
     "selected": false
   },
   {
-    "rank": 99,
+    "rank": 98,
     "name": "Mh. Yaseer",
     "branch": "R&A",
     "marks": 34,
     "selected": false
   },
   {
-    "rank": 100,
+    "rank": 99,
     "name": "Sarweshwar A Jadhav",
     "branch": "R&A",
     "marks": 33,
     "selected": false
   },
   {
-    "rank": 101,
+    "rank": 100,
     "name": "Sakshi Halingali",
     "branch": "ECE",
     "marks": 32,
     "selected": false
   },
   {
-    "rank": 102,
+    "rank": 101,
     "name": "Shrikant Choudhari",
     "branch": "ECE",
     "marks": 32,
     "selected": false
   },
   {
-    "rank": 103,
+    "rank": 102,
     "name": "Amruta Patil",
     "branch": "CSE-A",
     "marks": 30,
     "selected": false
   },
   {
-    "rank": 104,
+    "rank": 103,
     "name": "Sakshi Kumbar",
     "branch": "VLSI",
     "marks": 29,
     "selected": false
   },
   {
-    "rank": 105,
+    "rank": 104,
     "name": "Nida Patel",
     "branch": "CSE-A",
     "marks": 28,
     "selected": false
   },
   {
-    "rank": 106,
+    "rank": 105,
     "name": "Girija Appasaheb PAtil",
     "branch": "R&A",
     "marks": 27,
     "selected": false
   },
   {
-    "rank": 107,
+    "rank": 106,
     "name": "Nidha",
     "branch": "CSE-A",
     "marks": 27,
     "selected": false
   },
   {
-    "rank": 108,
+    "rank": 107,
     "name": "Samrudhi Kumbar",
     "branch": "VLSI",
     "marks": 22,
     "selected": false
   },
   {
-    "rank": 109,
+    "rank": 108,
     "name": "Shreya Karanan",
     "branch": "VLSI",
     "marks": 20,
