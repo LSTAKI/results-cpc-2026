@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Activity, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import ResultsCelebration from "@/components/ResultsCelebration";
 
 interface InitialLoadingScreenProps {
   onComplete: () => void;
@@ -14,11 +15,30 @@ export default function InitialLoadingScreen({
 }: InitialLoadingScreenProps) {
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [cpcTeamBypassAvailable, setCpcTeamBypassAvailable] = useState(false);
+  const [isCelebrating, setIsCelebrating] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const isReducedMotion = useRef(false);
 
+  // Directly bypass loading screen & celebration (e.g. CPC Team bypass button or keyboard shortcut)
+  const handleBypass = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    setIsCelebrating(false);
+    onComplete();
+  }, [onComplete]);
+
+  // Handle normal enter results button (triggers celebration if at >=85s, or completes if already celebrating)
   const handleEnterResults = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
+    if (isCelebrating) {
+      onComplete();
+    } else {
+      setIsCelebrating(true);
+    }
+  }, [isCelebrating, onComplete]);
+
+  // Handle celebration auto-completion
+  const handleCelebrationComplete = useCallback(() => {
+    setIsCelebrating(false);
     onComplete();
   }, [onComplete]);
 
@@ -27,7 +47,7 @@ export default function InitialLoadingScreen({
     if (typeof window !== "undefined") {
       isReducedMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (isReducedMotion.current) {
-        onComplete();
+        setIsCelebrating(true);
         return;
       }
 
@@ -37,7 +57,7 @@ export default function InitialLoadingScreen({
         setTimeout(() => setCpcTeamBypassAvailable(true), 0);
       }
     }
-  }, [onComplete]);
+  }, []);
 
   // Main 90-second timeline timer
   useEffect(() => {
@@ -45,10 +65,10 @@ export default function InitialLoadingScreen({
 
     timerRef.current = setInterval(() => {
       setElapsedSeconds((prev) => {
-        if (prev >= 90) {
+        if (prev >= 85 && !isCelebrating) {
           if (timerRef.current) clearInterval(timerRef.current);
-          onComplete();
-          return 90;
+          setIsCelebrating(true);
+          return 85;
         }
         return prev + 1;
       });
@@ -57,20 +77,20 @@ export default function InitialLoadingScreen({
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [onComplete]);
+  }, [isCelebrating]);
 
   // Keyboard shortcut listener (Ctrl+Shift+C for CPC Team unlock, Enter/Space/Escape active at >= 85s)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // CPC Team shortcut (Ctrl + Shift + C) to bypass intro
+      // CPC Team shortcut (Ctrl + Shift + C) to bypass intro without celebration
       if (e.ctrlKey && e.shiftKey && (e.key === "C" || e.key === "c")) {
         e.preventDefault();
-        handleEnterResults();
+        handleBypass();
         return;
       }
 
       // At >= 85s, Enter, Space, or Escape enters results
-      if (elapsedSeconds >= 85) {
+      if (elapsedSeconds >= 85 || isCelebrating) {
         if (e.key === "Enter" || e.key === "Escape" || e.key === " ") {
           e.preventDefault();
           handleEnterResults();
@@ -80,9 +100,9 @@ export default function InitialLoadingScreen({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [elapsedSeconds, handleEnterResults]);
+  }, [elapsedSeconds, isCelebrating, handleBypass, handleEnterResults]);
 
-  // Determine Timeline Stage based on elapsedSeconds (0 to 90s)
+  // Determine Timeline Stage based on elapsedSeconds (0 to 85s)
   const getStageContent = () => {
     const s = elapsedSeconds;
 
@@ -177,7 +197,7 @@ export default function InitialLoadingScreen({
         bpm: Math.min(135, 128 + Math.round((s - 70) * 0.7)),
         heartScale: 1.4,
       };
-    } else if (s < 85) {
+    } else {
       return {
         stageTitle: "STAGE 09 • FINAL AUDIT",
         mainTitle: "Scores finalized.",
@@ -186,20 +206,16 @@ export default function InitialLoadingScreen({
         bpm: 75,
         heartScale: 1.1,
       };
-    } else {
-      return {
-        stageTitle: "STAGE 10 • READY FOR REVEAL",
-        mainTitle: "ENTRANCE TEST RESULTS 2026",
-        subDetail: "Welcome to the Competitive Programming Club Results Portal.",
-        badge: "ENTER PORTAL",
-        bpm: 80,
-        heartScale: 1.0,
-      };
     }
   };
 
   const stage = getStageContent();
-  const progressPercent = Math.min(100, Math.round((elapsedSeconds / 90) * 100));
+  const progressPercent = Math.min(100, Math.round((elapsedSeconds / 85) * 100));
+
+  // If in celebration phase, show the party-popper celebration overlay
+  if (isCelebrating) {
+    return <ResultsCelebration onComplete={handleCelebrationComplete} />;
+  }
 
   return (
     <AnimatePresence>
@@ -247,7 +263,7 @@ export default function InitialLoadingScreen({
             {/* CPC Team Bypass Button */}
             {cpcTeamBypassAvailable && (
               <button
-                onClick={handleEnterResults}
+                onClick={handleBypass}
                 className="inline-flex items-center gap-1.5 rounded border border-emerald-500/40 bg-emerald-950/60 px-2.5 py-1 sm:px-3 sm:py-1 font-mono text-[10px] sm:text-xs font-bold text-emerald-400 hover:bg-emerald-900 transition-all shrink-0 min-h-[36px]"
                 title="CPC Team Bypass"
               >
@@ -329,7 +345,7 @@ export default function InitialLoadingScreen({
           <div className="mt-6 w-full">
             <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-1.5">
               <span>PROGRESS: {progressPercent}%</span>
-              <span>{elapsedSeconds}s / 90s</span>
+              <span>{elapsedSeconds}s / 85s</span>
             </div>
             <div className="h-1.5 w-full rounded-full bg-slate-950 overflow-hidden border border-slate-800">
               <div
@@ -343,7 +359,7 @@ export default function InitialLoadingScreen({
         {/* Footer Area: ENTER RESULTS Button */}
         <div className="mx-auto flex w-full max-w-5xl items-center justify-between border-t border-slate-800 pt-4">
           <div className="text-xs font-mono text-slate-500">
-            {elapsedSeconds >= 85 ? (
+            {elapsedSeconds >= 80 ? (
               <span className="text-emerald-400 font-bold flex items-center gap-1">
                 <CheckCircle2 className="h-3.5 w-3.5" /> REVEAL READY — PRESS ENTER TO CONTINUATION
               </span>
@@ -353,7 +369,7 @@ export default function InitialLoadingScreen({
           </div>
 
           <AnimatePresence>
-            {elapsedSeconds >= 85 ? (
+            {elapsedSeconds >= 80 ? (
               <motion.button
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -366,7 +382,7 @@ export default function InitialLoadingScreen({
               </motion.button>
             ) : (
               <div className="h-9 font-mono text-xs text-slate-500 flex items-center">
-                <span>STAGE {Math.min(10, Math.floor(elapsedSeconds / 9) + 1)} / 10 IN PROGRESS...</span>
+                <span>STAGE {Math.min(9, Math.floor(elapsedSeconds / 9.5) + 1)} / 9 IN PROGRESS...</span>
               </div>
             )}
           </AnimatePresence>
@@ -375,4 +391,5 @@ export default function InitialLoadingScreen({
     </AnimatePresence>
   );
 }
+
 

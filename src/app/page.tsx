@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import InitialLoadingScreen from "@/components/InitialLoadingScreen";
+import ResultsCelebration from "@/components/ResultsCelebration";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
@@ -24,6 +25,7 @@ import { StudentResult, SortOption, StatusFilter } from "@/types/results";
 
 export default function Home() {
   const [showInitialScreen, setShowInitialScreen] = useState(true);
+  const [showCelebrationPreview, setShowCelebrationPreview] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBranch, setSelectedBranch] = useState("ALL");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
@@ -174,8 +176,16 @@ export default function Home() {
           bypassSuspense={false}
           onToggleBypass={() => {}}
           onPreviewStudent={(student) => setSelectedStudent(student)}
+          onPreviewCelebration={() => setShowCelebrationPreview(true)}
           allResults={allResults}
         />
+
+        {/* CPC Team Manual Celebration Preview */}
+        {showCelebrationPreview && (
+          <ResultsCelebration
+            onComplete={() => setShowCelebrationPreview(false)}
+          />
+        )}
 
         {/* Footer */}
         <Footer onOpenAdminAccess={() => setIsAdminOpen(true)} />

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShieldAlert, KeyRound, X, Eye, Zap } from "lucide-react";
+import { ShieldAlert, KeyRound, X, Eye, Zap, Sparkles } from "lucide-react";
 import { StudentResult } from "@/types/results";
 
 interface AdminAccessProps {
@@ -11,6 +11,7 @@ interface AdminAccessProps {
   bypassSuspense: boolean;
   onToggleBypass: (bypass: boolean) => void;
   onPreviewStudent: (student: StudentResult) => void;
+  onPreviewCelebration?: () => void;
   allResults: StudentResult[];
 }
 
@@ -20,6 +21,7 @@ export default function AdminAccess({
   bypassSuspense,
   onToggleBypass,
   onPreviewStudent,
+  onPreviewCelebration,
   allResults,
 }: AdminAccessProps) {
   const [password, setPassword] = useState("");
@@ -201,7 +203,7 @@ export default function AdminAccess({
                 {/* Preview Cards */}
                 <div>
                   <span className="text-xs font-bold text-slate-300 block mb-2">
-                    Quick Preview Test Cards
+                    Quick Preview Test Cards & Effects
                   </span>
                   <div className="grid grid-cols-2 gap-2">
                     <button
@@ -219,6 +221,19 @@ export default function AdminAccess({
                       Preview Non-Selected
                     </button>
                   </div>
+
+                  {onPreviewCelebration && (
+                    <button
+                      onClick={() => {
+                        onClose();
+                        onPreviewCelebration();
+                      }}
+                      className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-amber-500/40 bg-amber-500/10 p-2.5 text-xs font-bold text-amber-300 hover:bg-amber-500/20 transition-all"
+                    >
+                      <Sparkles className="h-4 w-4 text-amber-400" />
+                      Preview Celebration Effect (Party Popper)
+                    </button>
+                  )}
                 </div>
               </div>
 
